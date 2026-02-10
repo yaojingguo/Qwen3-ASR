@@ -5,14 +5,14 @@ model = Qwen3ASRModel.from_pretrained(
     "Qwen/Qwen3-ASR-1.7B",
     dtype=torch.bfloat16,
     device_map="cuda:0",
-    # attn_implementation="flash_attention_2",
+    attn_implementation="flash_attention_2",
     max_inference_batch_size=32, # Batch size limit for inference. -1 means unlimited. Smaller values can help avoid OOM.
     max_new_tokens=256, # Maximum number of tokens to generate. Set a larger value for long audio input.
     forced_aligner="Qwen/Qwen3-ForcedAligner-0.6B",
     forced_aligner_kwargs=dict(
         dtype=torch.bfloat16,
         device_map="cuda:0",
-        # attn_implementation="flash_attention_2",
+        attn_implementation="flash_attention_2",
     ),
 )
 
