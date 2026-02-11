@@ -97,8 +97,10 @@ def main() -> None:
     wav, sr = _read_wav_from_bytes(audio_bytes)
     wav16k = _resample_to_16k(wav, sr)
 
-    for step_ms in [500, 1000, 2000, 4000]:
-        run_streaming_case(asr, wav16k, step_ms)
+    # for step_ms in [500, 1000, 2000, 4000]:
+    #    run_streaming_case(asr, wav16k, step_ms)
+
+    run_streaming_case(asr, wav16k, 1000)
 
 
 if __name__ == "__main__":

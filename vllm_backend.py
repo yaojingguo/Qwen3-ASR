@@ -1,3 +1,4 @@
+# It does not work in Jupyter.
 import torch
 from qwen_asr import Qwen3ASRModel
 
@@ -11,7 +12,7 @@ if __name__ == '__main__':
         forced_aligner_kwargs=dict(
             dtype=torch.bfloat16,
             device_map="cuda:0",
-            # attn_implementation="flash_attention_2",
+            attn_implementation="flash_attention_2",
         ),
     )
 
